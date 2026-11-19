@@ -1,0 +1,252 @@
+{
+  "metadata": {
+    "exportedAt": "2026-11-18T23:47:59.911Z",
+    "componentName": "Vista7",
+    "totalElements": 14,
+    "nestingDepth": 4,
+    "plugin": "Figma to JSON Exporter"
+  },
+  "designTokens": {
+    "colors": {
+      "color-rgb(255, 255, 255)": "rgb(255, 255, 255)",
+      "color-rgb(91, 90, 95)": "rgb(91, 90, 95)",
+      "color-rgb(131, 131, 131)": "rgb(131, 131, 131)"
+    },
+    "fonts": {
+      "lato": {
+        "family": "Lato",
+        "sizes": {
+          "size-16": "16px",
+          "size-18": "18px",
+          "size-24": "24px",
+          "size-14": "14px"
+        },
+        "weights": {
+          "weight-500": "500",
+          "weight-700": "700",
+          "weight-400": "400"
+        }
+      }
+    },
+    "spacing": {},
+    "effects": {}
+  },
+  "structure": {
+    "name": "vista7",
+    "type": "FRAME",
+    "size": {
+      "w": 393,
+      "h": 852
+    },
+    "styles": {
+      "bg": "rgb(255, 255, 255)",
+      "layout": {
+        "direction": "row",
+        "gap": 0,
+        "align": {
+          "main": "start",
+          "cross": "start"
+        }
+      }
+    },
+    "children": [
+      {
+        "name": "group-1",
+        "type": "GROUP",
+        "size": {
+          "w": 97,
+          "h": 30
+        },
+        "children": [
+          {
+            "name": "vector",
+            "type": "VECTOR",
+            "size": {
+              "w": 97,
+              "h": 30
+            },
+            "styles": {
+              "bg": "rgb(91, 90, 95)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "tecnica-mixta-acuarela-sobre-papel--lapiz-en-carboncillo-8b---",
+        "type": "TEXT",
+        "size": {
+          "w": 268,
+          "h": 78
+        },
+        "content": "Tecnica mixta\nacuarela sobre papel, lapiz en carboncillo 8B...",
+        "styles": {
+          "bg": "rgb(131, 131, 131)",
+          "text": {
+            "family": "Lato",
+            "size": 16,
+            "weight": "500",
+            "align": "left"
+          }
+        }
+      },
+      {
+        "name": "2023",
+        "type": "TEXT",
+        "size": {
+          "w": 268,
+          "h": 26
+        },
+        "content": "2023",
+        "styles": {
+          "bg": "rgb(91, 90, 95)",
+          "text": {
+            "family": "Lato",
+            "size": 18,
+            "weight": "500",
+            "align": "left"
+          }
+        }
+      },
+      {
+        "name": "acuarela-sobre-papel--que-consiste-en-aplicar-pigmentos-diluidos-en-agua-sobre-una-superficie-de-pap---",
+        "type": "TEXT",
+        "size": {
+          "w": 272,
+          "h": 104
+        },
+        "content": "Acuarela sobre papel, que consiste en aplicar pigmentos diluidos en agua sobre una superficie de pap...",
+        "styles": {
+          "bg": "rgb(131, 131, 131)",
+          "text": {
+            "family": "Lato",
+            "size": 18,
+            "weight": "500",
+            "align": "left"
+          }
+        }
+      },
+      {
+        "name": "andrea-salcedo",
+        "type": "TEXT",
+        "size": {
+          "w": 273,
+          "h": 58
+        },
+        "content": "Andrea \nSalcedo",
+        "styles": {
+          "bg": "rgb(91, 90, 95)",
+          "text": {
+            "family": "Lato",
+            "size": 24,
+            "weight": "700",
+            "align": "left"
+          }
+        }
+      },
+      {
+        "name": "component-4",
+        "type": "COMPONENT",
+        "size": {
+          "w": 134,
+          "h": 48
+        },
+        "component": {
+          "type": "main",
+          "name": null
+        },
+        "styles": {
+          "layout": {
+            "direction": "row",
+            "gap": 0,
+            "align": {
+              "main": "start",
+              "cross": "start"
+            }
+          }
+        },
+        "children": [
+          {
+            "name": "desliza-para-salir",
+            "type": "TEXT",
+            "size": {
+              "w": 134,
+              "h": 17
+            },
+            "content": "DESLIZA PARA SALIR",
+            "styles": {
+              "bg": "rgb(131, 131, 131)",
+              "text": {
+                "family": "Lato",
+                "size": 14,
+                "weight": "400",
+                "align": "center"
+              }
+            }
+          },
+          {
+            "name": "group-38",
+            "type": "GROUP",
+            "size": {
+              "w": 19,
+              "h": 17
+            },
+            "children": [
+              {
+                "name": "vector",
+                "type": "VECTOR",
+                "size": {
+                  "w": 10,
+                  "h": 17
+                },
+                "styles": {
+                  "bg": "rgb(91, 90, 95)"
+                }
+              },
+              {
+                "name": "vector",
+                "type": "VECTOR",
+                "size": {
+                  "w": 10,
+                  "h": 17
+                },
+                "styles": {
+                  "bg": "rgb(91, 90, 95)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "line-1",
+        "type": "LINE",
+        "size": {
+          "w": 393,
+          "h": 0
+        },
+        "styles": {
+          "border": {
+            "width": 1,
+            "color": "rgb(0, 0, 0)"
+          }
+        }
+      },
+      {
+        "name": "reproductor-de-audio-interactivo",
+        "type": "INSTANCE",
+        "size": {
+          "w": 0,
+          "h": 0
+        }
+      }
+    ]
+  },
+  "summary": {
+    "components": 1,
+    "instances": 1,
+    "frames": 1,
+    "texts": 5,
+    "hasAutoLayout": true,
+    "hasEffects": false
+  }
+}
