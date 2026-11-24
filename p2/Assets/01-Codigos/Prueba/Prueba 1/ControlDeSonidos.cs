@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using UnityEngine.UI;
+using TMPro;
 
 public class ControlDeSonidos : MonoBehaviour
 {
@@ -14,24 +15,32 @@ public class ControlDeSonidos : MonoBehaviour
     public Image ImagenProgreso;
     public float progreso = 0;
 
+    public TextMeshProUGUI autor_tmp;
+    public TextMeshProUGUI titulo_tmp;
+    public TextMeshProUGUI fecha_tmp;
+    public TextMeshProUGUI tecnica_tmp;
+
     private void LateUpdate()
     {
-        if (sonido.time > 0)
+        if (sonido != null)
         {
-            float tiempoActual = sonido.time;
-            float duracion = sonido.clip.length;
-            progreso = tiempoActual / duracion;
-            ImagenProgreso.fillAmount = progreso;
-            Eventos.AudioProgreso = progreso;
-        }
-        else if (progreso == 1)
-        {
-            Pausa();
-            Eventos.AudioProgreso = 0;
-        }
-        else if (progreso == 0)
-        {
-            ImagenProgreso.fillAmount = 0;
+            if (sonido.time > 0)
+            {
+                float tiempoActual = sonido.time;
+                float duracion = sonido.clip.length;
+                progreso = tiempoActual / duracion;
+                ImagenProgreso.fillAmount = progreso;
+                Eventos.AudioProgreso = progreso;
+            }
+            else if (progreso == 1)
+            {
+                Pausa();
+                Eventos.AudioProgreso = 0;
+            }
+            else if (progreso == 0)
+            {
+                ImagenProgreso.fillAmount = 0;
+            }
         }
     }
 
@@ -67,6 +76,13 @@ public class ControlDeSonidos : MonoBehaviour
         sonido.time = tiempo_actual;
         sonido.Stop();
     }
+    public void Detener()
+    {
+        tiempo_actual = 0;
+        sonido.time = tiempo_actual;
+        sonido.Stop();
+        ImagenProgreso.fillAmount = 0;
+    }
     public void Pausa()
     {
         if(sonido.isPlaying == true)
@@ -99,6 +115,8 @@ public class ControlDeSonidos : MonoBehaviour
             sonido.time = tiempo_actual;
             sonido.Play();
         }
+        //
+        ImagenProgreso.fillAmount = tiempo_actual / sonido.clip.length;
     }
 
     public void Avanzar()
@@ -111,6 +129,19 @@ public class ControlDeSonidos : MonoBehaviour
             sonido.time = tiempo_actual;
             sonido.Play();
         }
+        //
+        ImagenProgreso.fillAmount = tiempo_actual / sonido.clip.length;
+    }
+    private void interfazAsingarObra(AudioSource _sonido, string[] _informacion)
+    {
+        // asignar el sonido recibido
+        sonido = _sonido;
+
+        // asignar informacion
+        autor_tmp.text = _informacion[0];
+        titulo_tmp.text = _informacion[1];
+        fecha_tmp.text = _informacion[2];
+        tecnica_tmp.text = _informacion[3];
     }
 
     private void OnEnable()
@@ -124,9 +155,4 @@ public class ControlDeSonidos : MonoBehaviour
         Eventos.InterfazAsingarObra -= interfazAsingarObra;
     }
 
-    private void interfazAsingarObra(AudioSource _sonido)
-    {
-        sonido = _sonido;
-        print("---");
-    }
 }

@@ -21,5 +21,5 @@ public static class Eventos
 
     // --- 
 
-    public static Action<AudioSource> InterfazAsingarObra;
+    public static Action<AudioSource, string[]> InterfazAsingarObra;
 }

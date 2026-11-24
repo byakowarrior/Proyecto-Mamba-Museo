@@ -24,6 +24,7 @@ public class ObraInformacionEditor : Editor
     // =========================================================================
 
     private SerializedProperty sonidoProp;
+    private SerializedProperty sonidoClipProp;
     private SerializedProperty canvasProp;
     private SerializedProperty botonProp;
     private SerializedProperty tituloProp;
@@ -35,6 +36,7 @@ public class ObraInformacionEditor : Editor
     private void OnEnable()
     {
         sonidoProp = serializedObject.FindProperty("Sonido");
+        sonidoClipProp = serializedObject.FindProperty("SonidoClip");
         canvasProp = serializedObject.FindProperty("canvas");
         botonProp = serializedObject.FindProperty("Boton");
         tituloProp = serializedObject.FindProperty("Titulo");
@@ -51,6 +53,7 @@ public class ObraInformacionEditor : Editor
 
         // 1. Dibuja los campos de referencia (AudioSource y Canvas)
         EditorGUILayout.PropertyField(sonidoProp);
+        EditorGUILayout.PropertyField(sonidoClipProp);
         EditorGUILayout.PropertyField(canvasProp);
         EditorGUILayout.PropertyField(botonProp);
 
