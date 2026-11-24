@@ -5,6 +5,10 @@ public class AndroidHeadphoneNotifier : MonoBehaviour
 {
     private const int OUTPUT_DEVICES = 2;
 
+    [Header("Canvas a Controlar")]
+    [Tooltip("Canvas o panel que se activa cuando NO hay audífonos y se desactiva cuando SÍ hay")]
+    [SerializeField] private Canvas targetCanvas;
+
     [Header("Aviso Nativo de Android (Toast)")]
     [SerializeField] private string toastMessage = "Conecta audífonos (cable o Bluetooth) para continuar.";
     [SerializeField] private bool showToastLong = true;
@@ -27,20 +31,37 @@ public class AndroidHeadphoneNotifier : MonoBehaviour
     private float savedTimeScale = 1f;
     private bool timePaused;
 
+    private void Awake()
+    {
+        if (targetCanvas != null)
+        {
+            targetCanvas.gameObject.SetActive(false);
+        }
+    }
+
     private void Start()
     {
 #if UNITY_ANDROID && !UNITY_EDITOR
         InitializeAndroid();
         hasHeadphones = AreHeadphonesConnected();
 
-        if (!hasHeadphones && showOnStart && !skipped)
+        UpdateCanvasState(hasHeadphones);
+
+        if (!hasHeadphones && !skipped)
         {
-            ShowNativeToast(toastMessage);
+            if (showOnStart)
+            {
+                ShowNativeToast(toastMessage);
+            }
             SetPaused(pauseTimeWhileMissing);
         }
 
         StartCoroutine(MonitorLoop());
 #else
+        // En el Editor simulamos que no hay audífonos para probar el Canvas
+        hasHeadphones = false;
+        UpdateCanvasState(hasHeadphones);
+
         if (showOnStart && !skipped)
         {
             Debug.Log($"[Editor Sim] Toast Android: {toastMessage}");
@@ -52,7 +73,7 @@ public class AndroidHeadphoneNotifier : MonoBehaviour
 #if UNITY_EDITOR
     private void Update()
     {
-        if (allowSkipWithF1InEditor && timePaused && Input.GetKeyDown(KeyCode.F1))
+        if (allowSkipWithF1InEditor && (timePaused || (targetCanvas != null && targetCanvas.gameObject.activeSelf)) && Input.GetKeyDown(KeyCode.F1))
         {
             SkipNotice(force: true);
         }
@@ -63,7 +84,19 @@ public class AndroidHeadphoneNotifier : MonoBehaviour
     {
         if (!allowSkipByCode && !force) return;
         skipped = true;
+        UpdateCanvasState(true);
         SetPaused(false);
+    }
+
+    private void UpdateCanvasState(bool headphonesConnected)
+    {
+        if (targetCanvas == null) return;
+
+        bool shouldShowCanvas = !headphonesConnected && !skipped;
+        if (targetCanvas.gameObject.activeSelf != shouldShowCanvas)
+        {
+            targetCanvas.gameObject.SetActive(shouldShowCanvas);
+        }
     }
 
     private IEnumerator MonitorLoop()
@@ -74,14 +107,18 @@ public class AndroidHeadphoneNotifier : MonoBehaviour
         {
             bool connectedNow = AreHeadphonesConnected();
 
+            UpdateCanvasState(connectedNow);
+
             if (connectedNow && !hasHeadphones)
             {
                 skipped = false;
+                UpdateCanvasState(true);
                 SetPaused(false);
             }
             else if (!connectedNow && hasHeadphones)
             {
                 skipped = false;
+                UpdateCanvasState(false);
                 if (!skipped)
                 {
                     ShowNativeToast(toastMessage);
