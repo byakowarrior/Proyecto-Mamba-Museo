@@ -13,13 +13,13 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: USB
-  productName: MAMBA
+  productName: MAMB
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+  m_SplashScreenBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_ShowUnitySplashScreen: 1
-  m_ShowUnitySplashLogo: 1
-  m_SplashScreenOverlayOpacity: 1
+  m_ShowUnitySplashLogo: 0
+  m_SplashScreenOverlayOpacity: 0
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
   m_SplashScreenDrawMode: 1
@@ -40,11 +40,11 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 26ca8a02587a8f34c86bf82553fc71a1, type: 3}
+  - logo: {fileID: 21300000, guid: 3bc886d57cb551a4fbc1aba34590b101, type: 3}
     duration: 2
-  - logo: {fileID: 10404, guid: 0000000000000000f000000000000000, type: 0}
+  - logo: {fileID: 21300000, guid: fe8e705bbaf49964eb0442a185b2e497, type: 3}
     duration: 2
-  - logo: {fileID: 21300000, guid: a9a8cdf9ee5dc1643bad89eacc4321b5, type: 3}
+  - logo: {fileID: 21300000, guid: 8d582af98e152c34fb2d68df034cb74a, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   defaultScreenWidth: 1920
@@ -176,7 +176,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: com.USB.MAMBA
+    Android: com.USB.MAMB
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -315,32 +315,44 @@ PlayerSettings:
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
       m_Width: 324
       m_Height: 324
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
       m_Width: 216
       m_Height: 216
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
       m_Width: 162
       m_Height: 162
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
       m_Width: 108
       m_Height: 108
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
+      - {fileID: 2800000, guid: f554795ff936a6545bb405ee041b14f0, type: 3}
       m_Width: 81
       m_Height: 81
       m_Kind: 2

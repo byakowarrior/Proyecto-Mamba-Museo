@@ -8,16 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00-Escenas/Lector.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Res/RC RECORDER.unity
     guid: 0e95cbe9439484847b7e732c043144d7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Res/prueba marcadores.unity
     guid: 9aeeb6d763c45c2419e907411d517897
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Res/Prueba.unity
     guid: 1696f8548f65de6408904fc84ffceed0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Res/Reproductor.unity
     guid: c0dbc47b94f3e38418c10695d42ebb3e
   m_configObjects: {}
