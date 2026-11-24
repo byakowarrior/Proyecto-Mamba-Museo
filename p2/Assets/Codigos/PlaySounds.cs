@@ -14,12 +14,17 @@ public class PlaySounds : MonoBehaviour
     [Header("Indice del Audio")]
     public int AudioIndice;
 
+    public bool Reproduciendo;
+    public float AvanzarReproducirSalto = 5f; // salto de 5 segundos - para avazanar o retroceder
+    public float tiempo_actual;
+
     //
     private void Awake()
     {
         PlayIconGO.SetActive(true);
         StopIconGO.SetActive(false);
         //_MostrarOcultarAudioCanvas(false);
+        tiempo_actual = 0f;
     }
 
     private void LateUpdate()
@@ -97,6 +102,24 @@ public class PlaySounds : MonoBehaviour
             //print(AudioIndice + "-----");
             Eventos.MostrarFichaTecnica(AudioIndice);
             Eventos.DetenerVuforia();
+        }
+    }
+
+    public void Pausa()
+    {
+        if (Sonido1.isPlaying == true)
+        {
+            tiempo_actual = Sonido1.time;
+            Sonido1.Stop();
+        }
+    }
+
+    public void Reproducir()
+    {
+        if (Sonido1.isPlaying == false)
+        {
+            Sonido1.time = tiempo_actual;
+            Sonido1.Play();
         }
     }
 }

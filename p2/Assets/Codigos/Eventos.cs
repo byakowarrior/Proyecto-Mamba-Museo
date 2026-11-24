@@ -19,4 +19,7 @@ public static class Eventos
     public static Action ActivarVuforia;
     public static Action DetenerVuforia;
 
+    // --- 
+
+    public static Action<AudioSource> InterfazAsingarObra;
 }
