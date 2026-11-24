@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public class ControlDeSonidos : MonoBehaviour
 {
@@ -10,6 +11,30 @@ public class ControlDeSonidos : MonoBehaviour
     public AudioSource sonido; // ok
     public float tiempo_actual; // ok
     public Coroutine corutina;
+    public Image ImagenProgreso;
+    public float progreso = 0;
+
+    private void LateUpdate()
+    {
+        if (sonido.time > 0)
+        {
+            float tiempoActual = sonido.time;
+            float duracion = sonido.clip.length;
+            progreso = tiempoActual / duracion;
+            ImagenProgreso.fillAmount = progreso;
+            Eventos.AudioProgreso = progreso;
+        }
+        else if (progreso == 1)
+        {
+            Pausa();
+            Eventos.AudioProgreso = 0;
+        }
+        else if (progreso == 0)
+        {
+            ImagenProgreso.fillAmount = 0;
+        }
+    }
+
 
     [ContextMenu("Pausa")]
 

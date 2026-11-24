@@ -44,6 +44,7 @@ public class ObraInformacionEditor : Editor
         tecnicaProp = serializedObject.FindProperty("Tecnica");
     }
 
+
     public override void OnInspectorGUI()
     {
         serializedObject.Update();

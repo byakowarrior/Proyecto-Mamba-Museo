@@ -46,7 +46,7 @@ MonoBehaviour:
     autoImportArcore: 1
     thirdPartyARCoreClientDetected: 0
   playmode:
-    mRecordingPath: D:/Documentos/00 GRABACIONES/0 6 - GRABACIONES/04 - Cloud Recognition - 01.mp4
+    mRecordingPath: D:/Documentos/00 GRABACIONES/Screenrecorder-2026-11-23-23-17-15-897.mp4
     playModeType: 0
     mSimulatorInputActionAsset: {fileID: -944628639613478452, guid: eae7022f5cfd04e8189b1f372421b225, type: 3}
   webcam:

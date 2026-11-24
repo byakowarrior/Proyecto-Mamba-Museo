@@ -13,4 +13,6 @@ public class ObraInformacion : MonoBehaviour
     public string Descripcion;
     public string Fecha;
     public string Tecnica;
+
 }
+
